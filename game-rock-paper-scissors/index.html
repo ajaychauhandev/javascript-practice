@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game-Paper Rock Scissor</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<style>
+</style>
+<body>
+  <h1>Game - Rock Paper Scissors</h1>
+  <div class="choices">
+    <div class="choice" id="paper">
+      <img src="./images/paper.png" alt="paper" width="100" height="100" style="border-radius: 50%;">
+    </div>
+    <div class="choice" id="rock">
+      <img src="./images/rock.png" alt="paper" width="100" height="100" style="border-radius: 50%;">
+    </div>
+    <div class="choice" id="scissors">
+      <img src="./images/scissors.png" alt="paper" width="100" height="100" style="border-radius: 50%;">
+    </div>
+  </div>
+  <div class="choice-selection">
+    <p>User Selected :: <b id="user-selected">---</b></p>
+    <p>Comp Selected :: <b id="comp-selected">---</b></p>
+  </div>
+  <h3 class="score-board-title">Score Board</h3 class="">
+  <div class="score-board">
+    <div class="score">
+      <span id="user-score" class="score-num">0</span>
+      <span>You</span>
+    </div>
+    <div class="score">
+      <span id="draw-score" class="score-num">0</span>
+      <span>Draw</span>
+    </div>
+    <div class="score">
+      <span id="comp-score" class="score-num">0</span>
+      <span>Comp</span>
+    </div>
+  </div>
+  <div class="msg-container">
+    <p id="msg">Play your move</p>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+</html>
