@@ -5,8 +5,6 @@
 */
 
 
-
-
 let userScoreCount = 0;
 let compScoreCount = 0;
 let drawScoreCount = 0;
