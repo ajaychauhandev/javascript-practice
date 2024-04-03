@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar or Navbar practice</title>
+
+  <style>
+    .bg-red {
+      background-color: red;
+    }
+
+    .border-black {
+      border: 1px solid black;
+    }
+
+    .sidebar {
+      height: 100vh;
+      width: 25%;
+      background-color: green;
+      position: absolute;
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      transform: translateX(-100%);
+      transition: 0.3s all ease;
+      overflow: hidden;
+    }
+
+    .sidebar-opened .sidebar {
+      transform: translateX(0%);
+    }
+  </style>
+</head>
+<body>
+  <div class="" style="display: flex; flex-direction: column; justify-content: center; max-width: 200px; margin: auto;">
+    <button class="changeBg">Change body bg to Red</button>
+    <br>
+    <button class="openSidebar">Open Close sidebar</button>
+  </div>
+  <div class="sidebar">
+    <h1>Sidebar or Navbar</h1>
+  </div>
+
+  <script>
+
+    // open close sidebar
+    const openSidebar = document.querySelector('.openSidebar');
+    openSidebar.addEventListener('click', (event) => {
+      if (!document.body.classList.contains('sidebar-opened')) {
+        document.body.className += ' sidebar-opened';
+      } else {
+        document.body.classList.remove('sidebar-opened');
+      }
+    });
+
+
+    // add remove classes in body
+    const btn = document.querySelector('.changeBg');
+    btn.addEventListener('click', (event) => {
+      if (!document.body.classList.contains('bg-red')) {
+        document.body.classList.add('bg-red');
+        document.body.className += ' border-black';
+      } else {
+        document.body.classList.remove('bg-red');
+        document.body.classList.remove('border-black');
+        // document.body.className = '';
+      }
+    });
+  </script>
+</body>
+</html>
