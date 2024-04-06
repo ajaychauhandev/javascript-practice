@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humbergur Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .humbergur-btn {
+      width: 80px;
+      height: 80px;
+      border: 1px solid red;
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .humbergur-line {
+      width: 50px;
+      height: 6px;
+      background-color: green;
+      border-radius: 20%;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .humbergur-line::before,
+    .humbergur-line::after {
+      content: '';
+      position: absolute;
+
+      width: 50px;
+      height: 6px;
+      background-color: green;
+      border-radius: 20%;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .humbergur-line::before {
+      transform: translateY(-15px);
+    }
+
+    .humbergur-line::after {
+      transform: translateY(15px);
+    }
+
+
+
+    .humbergur-btn.open .humbergur-line {
+      transform: translateX(-50px);
+      background-color: transparent;
+    }
+
+    .humbergur-btn.open .humbergur-line::before {
+      transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    .humbergur-btn.open .humbergur-line::after {
+      transform: rotate(-45deg) translate(35px, 35px);
+    }
+  </style>
+</head>
+<body>
+  <div class="humbergur-btn">
+    <div class="humbergur-line">
+    </div>
+  </div>
+
+  <script>
+    const btnHumbergur = document.querySelector('.humbergur-btn');
+    let open = false;
+    btnHumbergur.addEventListener('click', (e) => {
+      if (!open) {
+        btnHumbergur.classList.add('open');
+        open = true;
+      } else {
+        btnHumbergur.classList.remove('open');
+        open = false;
+      }
+    });
+
+
+  </script>
+</body>
+</html>
